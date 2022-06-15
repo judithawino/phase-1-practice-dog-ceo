@@ -23,6 +23,7 @@ function addImage(dogPicUrl) {
   container.appendChild(newImageEl);
 }
 
+//add JavaScript so that:on page load, fetch all the dog breeds using the url above
 function loadBreedOptions() {
   const breedUrl = 'https://dog.ceo/api/breeds/list/all'
   fetch(breedUrl)
@@ -48,7 +49,7 @@ function removeChildren(element) {
     child = element.lastElementChild;
   }
 }
-
+//challenge 4: adding JavaScript so that the user can filter breeds that start with a particular letter using a dropdown
 function selectBreedsStartingWith(letter) {
   updateBreedList(breeds.filter(breed => breed.startsWith(letter)));
 }
@@ -59,7 +60,7 @@ function addBreedSelectListener() {
     selectBreedsStartingWith(event.target.value);
   });
 }
-
+//challenge 2b: add the breeds to the page in an <ul>
 function addBreed(breed) {
   let ul = document.querySelector('#dog-breeds');
   let li = document.createElement('li');
@@ -68,7 +69,7 @@ function addBreed(breed) {
   ul.appendChild(li);
   li.addEventListener('click', updateColor);
 }
-
+//challenge 3: add JavaScript so that the font color of a particular <li> changes on click
 function updateColor(event) {
   event.target.style.color = 'palevioletred';
 }
